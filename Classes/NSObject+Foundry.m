@@ -81,6 +81,9 @@
             case FoundryPropertyTypeState:
                 [attributesDict setObject:[GZLocations state] forKey:key];
                 break;
+            case FoundryPropertyTypeStateCode:
+                [attributesDict setObject:[GZLocations stateCode] forKey:key];
+                break;
             case FoundryPropertyTypeZipCode:
                 [attributesDict setObject:[GZLocations zipCode] forKey:key];
                 break;
