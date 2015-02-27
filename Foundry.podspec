@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/smyrgl/Foundry"
   s.license          = 'MIT'
   s.author           = { "John Tumminaro" => "john@tinylittlegears.com" }
-  s.source           = { :git => "https://github.com/smyrgl/Foundry.git", :tag => "0.1.2gw" }
+  s.source           = { :git => "https://github.com/DoubleNode/Foundry.git", :tag => "0.1.2gw" }
 
   s.ios.deployment_target = '6.0'
   s.osx.deployment_target = '10.7'
