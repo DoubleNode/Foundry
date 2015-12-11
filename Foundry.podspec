@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name             = "Foundry"
-  s.version          = "0.1.2"
+  s.version          = "0.1.3"
   s.summary          = "A library for creating test objects in Objective-C."
   s.homepage         = "https://github.com/smyrgl/Foundry"
   s.license          = 'MIT'
   s.author           = { "John Tumminaro" => "john@tinylittlegears.com" }
-  s.source           = { :git => "https://github.com/DoubleNode/Foundry.git", :tag => "0.1.2gwt" }
+  s.source           = { :git => "https://github.com/DoubleNode/Foundry.git", :tag => s.version.to_s }
 
   s.ios.deployment_target = '6.0'
   s.osx.deployment_target = '10.7'
