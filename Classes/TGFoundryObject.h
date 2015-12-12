@@ -159,6 +159,20 @@ typedef NS_ENUM(NSUInteger, FoundryPropertyType) {
     
     /**
      
+     *  Property represents a random date.
+     
+     */
+    FoundryPropertyTypeDate,
+    
+    /**
+     
+     *  Property represents a random boolean.
+     
+     */
+    FoundryPropertyTypeBoolean,
+    
+    /**
+     
      *  Property represents a unique identifier, will have a UUID generated and assigned.
      
      */

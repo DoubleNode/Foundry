@@ -127,6 +127,12 @@
             case FoundryPropertyTypePhoneNumber:
                 [attributesDict setObject:[GZPhoneNumbers phoneNumber] forKey:key];
                 break;
+            case FoundryPropertyTypeDate:
+                [attributesDict setObject:[NSDate dateWithTimeIntervalSince1970:arc4random_uniform(36500) * 86400] forKey:key];
+                break;
+            case FoundryPropertyTypeBoolean:
+                [attributesDict setObject:(arc4random_uniform(1) ? @YES : @NO) forKey:key];
+                break;
             case FoundryPropertyTypeUUID:
                 [attributesDict setObject:[[NSUUID UUID] UUIDString] forKey:key];
                 break;
