@@ -199,6 +199,139 @@ typedef NS_ENUM(NSUInteger, FoundryPropertyType) {
      
      */
     FoundryPropertyTypeSpecificRelationship,
+    
+    /**
+     
+     *  Property represents a random timezone name.
+     
+     */
+    FoundryPropertyTypeTimezoneName,
+    
+    /**
+     
+     *  Property represents a random weekday symbol.
+     
+     */
+    FoundryPropertyTypeWeekdaySymbol,
+    
+    /**
+     
+     *  Property represents a random short weekday symbol.
+     
+     */
+    FoundryPropertyTypeShortWeekdaySymbol,
+    
+    /**
+     
+     *  Property represents a random very short weekday symbol.
+     
+     */
+    FoundryPropertyTypeVeryShortWeekdaySymbol,
+    
+    /**
+     
+     *  Property represents a random standalone weekday symbol.
+     
+     */
+    FoundryPropertyTypeStandaloneWeekdaySymbol,
+    
+    /**
+     
+     *  Property represents a random short standalone weekday symbol.
+     
+     */
+    FoundryPropertyTypeShortStandaloneWeekdaySymbol,
+    
+    /**
+     
+     *  Property represents a random very short standalone weekday symbol.
+     
+     */
+    FoundryPropertyTypeVeryShortStandaloneWeekdaySymbol,
+    
+    /**
+     
+     *  Property represents a random month symbol.
+     
+     */
+    FoundryPropertyTypeMonthSymbol,
+    
+    /**
+     
+     *  Property represents a random short month symbol.
+     
+     */
+    FoundryPropertyTypeShortMonthSymbol,
+    
+    /**
+     
+     *  Property represents a random very short month symbol.
+     
+     */
+    FoundryPropertyTypeVeryShortMonthSymbol,
+    
+    /**
+     
+     *  Property represents a random standalone month symbol.
+     
+     */
+    FoundryPropertyTypeStandaloneMonthSymbol,
+    
+    /**
+     
+     *  Property represents a random short standalone month symbol.
+     
+     */
+    FoundryPropertyTypeShortStandaloneMonthSymbol,
+    
+    /**
+     
+     *  Property represents a random very short standalone month symbol.
+     
+     */
+    FoundryPropertyTypeVeryShortStandaloneMonthSymbol,
+    
+    /**
+     
+     *  Property represents a random quarter symbol.
+     
+     */
+    FoundryPropertyTypeQuarterSymbol,
+    
+    /**
+     
+     *  Property represents a random short quarter symbol.
+     
+     */
+    FoundryPropertyTypeShortQuarterSymbol,
+    
+    /**
+     
+     *  Property represents a random standalone quarter symbol.
+     
+     */
+    FoundryPropertyTypeStandaloneQuarterSymbol,
+    
+    /**
+     
+     *  Property represents a random short standalone quarter symbol.
+     
+     */
+    FoundryPropertyTypeShortStandaloneQuarterSymbol,
+    
+    /**
+     
+     *  Property represents a random era symbol.
+     
+     */
+    FoundryPropertyTypeEraSymbol,
+    
+    /**
+     
+     *  Property represents a random long era symbol.
+     
+     */
+    FoundryPropertyTypeLongEraSymbol,
 };
 
 

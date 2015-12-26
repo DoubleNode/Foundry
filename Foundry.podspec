@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "Foundry"
-  s.version          = "0.1.4"
+  s.version          = "0.1.5"
   s.summary          = "A library for creating test objects in Objective-C."
   s.homepage         = "https://github.com/smyrgl/Foundry"
   s.license          = 'MIT'

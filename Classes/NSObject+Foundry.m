@@ -10,6 +10,36 @@
 #import <Gizou/Gizou.h>
 #import <objc/runtime.h>
 
+@interface TGFoundryGlobal
+
++ (NSDateFormatter*)foundryDateFormatter;
+
+@end
+
+@implementation TGFoundryGlobal
+
++ (NSDateFormatter*)foundryDateFormatter
+{
+    static NSDateFormatter* sharedFormatter = nil;
+    static dispatch_once_t  onceToken;
+    
+    dispatch_once(&onceToken, ^
+                  {
+                      sharedFormatter = [[NSDateFormatter alloc] init];
+                      if (!sharedFormatter)
+                      {
+                          NSException*    exception = [NSException exceptionWithName:@"Foundry Exception"
+                                                                              reason:@"sharedFormatter is missing!"
+                                                                            userInfo:nil];
+                          @throw exception;
+                      }
+                  });
+    
+    return sharedFormatter;
+}
+
+@end
+
 @implementation NSObject (Foundry)
 
 + (instancetype)foundryBuild
@@ -145,6 +175,140 @@
                 }
                 break;
             }
+                
+            case FoundryPropertyTypeTimezoneName:
+            {
+                NSArray<NSString*>* items  = [NSTimeZone knownTimeZoneNames];
+                [attributesDict setObject:items[arc4random_uniform(items.count)] forKey:key];
+                break;
+            }
+                
+            case FoundryPropertyTypeWeekdaySymbol:
+            {
+                NSArray<NSString*>* items  = [TGFoundryGlobal foundryDateFormatter].weekdaySymbols;
+                [attributesDict setObject:items[arc4random_uniform(items.count)] forKey:key];
+                break;
+            }
+                
+            case FoundryPropertyTypeShortWeekdaySymbol:
+            {
+                NSArray<NSString*>* items  = [TGFoundryGlobal foundryDateFormatter].shortWeekdaySymbols;
+                [attributesDict setObject:items[arc4random_uniform(items.count)] forKey:key];
+                break;
+            }
+                
+            case FoundryPropertyTypeVeryShortWeekdaySymbol:
+            {
+                NSArray<NSString*>* items  = [TGFoundryGlobal foundryDateFormatter].veryShortWeekdaySymbols;
+                [attributesDict setObject:items[arc4random_uniform(items.count)] forKey:key];
+                break;
+            }
+                
+            case FoundryPropertyTypeStandaloneWeekdaySymbol:
+            {
+                NSArray<NSString*>* items  = [TGFoundryGlobal foundryDateFormatter].standaloneWeekdaySymbols;
+                [attributesDict setObject:items[arc4random_uniform(items.count)] forKey:key];
+                break;
+            }
+                
+            case FoundryPropertyTypeShortStandaloneWeekdaySymbol:
+            {
+                NSArray<NSString*>* items  = [TGFoundryGlobal foundryDateFormatter].shortStandaloneWeekdaySymbols;
+                [attributesDict setObject:items[arc4random_uniform(items.count)] forKey:key];
+                break;
+            }
+                
+            case FoundryPropertyTypeVeryShortStandaloneWeekdaySymbol:
+            {
+                NSArray<NSString*>* items  = [TGFoundryGlobal foundryDateFormatter].veryShortStandaloneWeekdaySymbols;
+                [attributesDict setObject:items[arc4random_uniform(items.count)] forKey:key];
+                break;
+            }
+                
+            case FoundryPropertyTypeMonthSymbol:
+            {
+                NSArray<NSString*>* items  = [TGFoundryGlobal foundryDateFormatter].monthSymbols;
+                [attributesDict setObject:items[arc4random_uniform(items.count)] forKey:key];
+                break;
+            }
+                
+            case FoundryPropertyTypeShortMonthSymbol:
+            {
+                NSArray<NSString*>* items  = [TGFoundryGlobal foundryDateFormatter].shortMonthSymbols;
+                [attributesDict setObject:items[arc4random_uniform(items.count)] forKey:key];
+                break;
+            }
+                
+            case FoundryPropertyTypeVeryShortMonthSymbol:
+            {
+                NSArray<NSString*>* items  = [TGFoundryGlobal foundryDateFormatter].veryShortMonthSymbols;
+                [attributesDict setObject:items[arc4random_uniform(items.count)] forKey:key];
+                break;
+            }
+                
+            case FoundryPropertyTypeStandaloneMonthSymbol:
+            {
+                NSArray<NSString*>* items  = [TGFoundryGlobal foundryDateFormatter].standaloneMonthSymbols;
+                [attributesDict setObject:items[arc4random_uniform(items.count)] forKey:key];
+                break;
+            }
+                
+            case FoundryPropertyTypeShortStandaloneMonthSymbol:
+            {
+                NSArray<NSString*>* items  = [TGFoundryGlobal foundryDateFormatter].shortStandaloneMonthSymbols;
+                [attributesDict setObject:items[arc4random_uniform(items.count)] forKey:key];
+                break;
+            }
+                
+            case FoundryPropertyTypeVeryShortStandaloneMonthSymbol:
+            {
+                NSArray<NSString*>* items  = [TGFoundryGlobal foundryDateFormatter].veryShortStandaloneMonthSymbols;
+                [attributesDict setObject:items[arc4random_uniform(items.count)] forKey:key];
+                break;
+            }
+                
+            case FoundryPropertyTypeQuarterSymbol:
+            {
+                NSArray<NSString*>* items  = [TGFoundryGlobal foundryDateFormatter].quarterSymbols;
+                [attributesDict setObject:items[arc4random_uniform(items.count)] forKey:key];
+                break;
+            }
+                
+            case FoundryPropertyTypeShortQuarterSymbol:
+            {
+                NSArray<NSString*>* items  = [TGFoundryGlobal foundryDateFormatter].shortQuarterSymbols;
+                [attributesDict setObject:items[arc4random_uniform(items.count)] forKey:key];
+                break;
+            }
+                
+            case FoundryPropertyTypeStandaloneQuarterSymbol:
+            {
+                NSArray<NSString*>* items  = [TGFoundryGlobal foundryDateFormatter].standaloneQuarterSymbols;
+                [attributesDict setObject:items[arc4random_uniform(items.count)] forKey:key];
+                break;
+            }
+                
+            case FoundryPropertyTypeShortStandaloneQuarterSymbol:
+            {
+                NSArray<NSString*>* items  = [TGFoundryGlobal foundryDateFormatter].shortStandaloneQuarterSymbols;
+                [attributesDict setObject:items[arc4random_uniform(items.count)] forKey:key];
+                break;
+            }
+                
+            case FoundryPropertyTypeEraSymbol:
+            {
+                NSArray<NSString*>* items  = [TGFoundryGlobal foundryDateFormatter].eraSymbols;
+                [attributesDict setObject:items[arc4random_uniform(items.count)] forKey:key];
+                break;
+            }
+                
+            case FoundryPropertyTypeLongEraSymbol:
+            {
+                NSArray<NSString*>* items  = [TGFoundryGlobal foundryDateFormatter].longEraSymbols;
+                [attributesDict setObject:items[arc4random_uniform(items.count)] forKey:key];
+                break;
+            }
+                
             default:
                 break;
         }
