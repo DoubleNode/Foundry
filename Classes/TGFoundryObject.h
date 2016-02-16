@@ -368,7 +368,9 @@ typedef NS_ENUM(NSUInteger, FoundryPropertyType) {
  *  @return Value to assign to the property.
  */
 
-+ (id)foundryAttributeForProperty:(NSString *)property;
++ (id)foundryAttributeForProperty:(NSString *)property
+                       withObject:(id)newObject
+                    andAttributes:(NSDictionary*)attributes;
 
 /**
  *  If you assign a relationship property the `FoundryPropertyTypeSpecificRelationship` value in the build specs, this method will be called looking for the related object.

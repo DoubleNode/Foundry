@@ -26,6 +26,7 @@
  */
 
 + (instancetype)foundryBuild;
++ (instancetype)foundryBuildWithAttributes:(NSDictionary*)attributes;
 
 /**
  *  Builds and returns an array of objects using the Foundry process.
@@ -36,6 +37,8 @@
  */
 
 + (NSArray *)foundryBuildNumber:(NSUInteger)number;
++ (NSArray *)foundryBuildNumber:(NSUInteger)number
+                 withAttributes:(NSDictionary*)attributes;
 
 ///-----------------
 /// @name Attributes
@@ -48,6 +51,10 @@
  */
 
 + (NSDictionary *)foundryAttributes;
++ (NSDictionary *)foundryAttributesWithAttributes:(NSDictionary*)attributes;
+
+- (NSDictionary *)foundryAttributes;
+- (NSDictionary *)foundryAttributesWithAttributes:(NSDictionary*)attributes;
 
 /**
  *  Returns an array of object attribute dictionaries which is the equivalent of calling `foundryAttributes` multiple times.
@@ -58,5 +65,7 @@
  */
 
 + (NSArray *)foundryAttributesNumber:(NSUInteger)number;
++ (NSArray *)foundryAttributesNumber:(NSUInteger)number
+                      withAttributes:(NSDictionary*)attributes;
 
 @end
